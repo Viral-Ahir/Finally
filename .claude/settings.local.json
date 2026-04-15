@@ -1,0 +1,30 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/Users/ASUS/**)",
+      "Read(//c/Users/ASUS/AppData/Roaming/**)",
+      "Bash(pip install:*)",
+      "Bash(python -m pip install uv)",
+      "Bash(python -m uv sync --extra dev --directory \"C:/Users/ASUS/Desktop/ClaudeProjects/finally/backend\")",
+      "Bash(python -m uv run --extra dev pytest -v)",
+      "Bash(npm --version)",
+      "Bash(npx --version)",
+      "Bash(npx create-next-app@latest frontend --typescript --tailwind --eslint --app --no-src-dir --use-npm --no-import-alias)",
+      "Bash(npm install:*)",
+      "Bash(python -m uv sync --extra dev)",
+      "Bash(chmod +x:*)",
+      "Bash(python -m uv run python -c \"import httpx; print\\(httpx.__version__\\)\")",
+      "Bash(npm run:*)",
+      "Bash(npx tsc:*)",
+      "Bash(npx playwright:*)",
+      "Bash(docker build:*)",
+      "Bash(docker rm:*)",
+      "Bash(docker run:*)",
+      "Bash(curl -s http://localhost:8000/api/health)",
+      "Bash(break)",
+      "Bash(curl -s http://localhost:8000/)",
+      "Bash(curl -s -N --max-time 3 http://localhost:8000/api/stream/prices)",
+      "Bash(curl:*)"
+    ]
+  }
+}

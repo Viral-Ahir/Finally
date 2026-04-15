@@ -78,7 +78,7 @@ async def _generate_events(
                 prices = price_cache.get_all()
 
                 if prices:
-                    data = {ticker: update.to_dict() for ticker, update in prices.items()}
+                    data = [update.to_dict() for update in prices.values()]
                     payload = json.dumps(data)
                     yield f"data: {payload}\n\n"
 

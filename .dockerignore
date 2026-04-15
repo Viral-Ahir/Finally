@@ -1,0 +1,40 @@
+# Git
+.git
+.github
+
+# Dependencies (installed in container)
+frontend/node_modules
+backend/.venv
+
+# Build artifacts
+frontend/.next
+frontend/out
+
+# Runtime data
+db/finally.db
+db/finally.db-journal
+db/finally.db-wal
+
+# IDE and OS
+.vscode
+.idea
+*.swp
+*.swo
+Thumbs.db
+.DS_Store
+
+# Environment (passed via --env-file)
+.env
+
+# Planning and docs
+planning/
+*.md
+!frontend/README.md
+
+# Test infrastructure
+test/
+backend/tests/
+backend/.pytest_cache
+
+# Claude config
+.claude

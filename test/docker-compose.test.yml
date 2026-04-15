@@ -1,0 +1,36 @@
+services:
+  app:
+    build:
+      context: ..
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - LLM_MOCK=true
+      - DB_PATH=/app/db/finally.db
+    volumes:
+      - test-db:/app/db
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/api/health')"]
+      interval: 3s
+      timeout: 5s
+      retries: 20
+      start_period: 10s
+
+  playwright:
+    image: mcr.microsoft.com/playwright:v1.49.0-noble
+    depends_on:
+      app:
+        condition: service_healthy
+    working_dir: /tests
+    volumes:
+      - .:/tests
+      - ./test-results:/tests/test-results
+      - ./playwright-report:/tests/playwright-report
+    environment:
+      - BASE_URL=http://app:8000
+    command: >
+      bash -c "npm install && npx playwright test"
+
+volumes:
+  test-db:

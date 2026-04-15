@@ -1,3 +1,15 @@
+# FinAlly — runtime database
+db/finally.db
+db/finally.db-journal
+db/finally.db-wal
+
+# Node modules (frontend)
+frontend/node_modules/
+
+# Next.js build output
+frontend/.next/
+frontend/out/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
